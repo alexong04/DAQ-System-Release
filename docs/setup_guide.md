@@ -34,163 +34,63 @@ The backend includes a `SIMULATOR` mode. Use this when the Arduino or HC-05 is n
 
 ---
 
-## 2. Recommended folder structure
+## 2. Start the backend
 
-Place the backend and frontend folders inside one release folder:
+From the release repository root, double-click:
 
 ```text
-DAQ-System-Release/
-├── backend/
-├── frontend/
-├── README.md
-├── setup_guide.md
-├── user_manual.md
-├── start_backend.bat
-└── start_frontend.bat
+start_backend.bat
 ```
 
-If the backend and frontend are separate GitHub repositories, clone both repositories into the same release folder:
-
-```bash
-git clone <backend-repository-url> backend
-git clone <frontend-repository-url> frontend
-```
-
-Replace the URLs with the actual GitHub repository links.
-
----
-
-## 3. Backend setup
-
-Open a terminal in the release folder, then run:
-
-```bash
-cd backend
-python -m venv venv
-```
-
-### Windows PowerShell
-
-```powershell
-venv\Scripts\activate
-pip install -r requirements.txt
-copy .env.example .env
-python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-### Windows Command Prompt
-
-```bat
-venv\Scripts\activate.bat
-pip install -r requirements.txt
-copy .env.example .env
-python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-### macOS/Linux
-
-```bash
-source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-The backend should run at:
+A terminal window should open and start the FastAPI backend at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-Open this page to verify the API documentation:
+Keep this backend terminal window open while using the system. Closing it stops the backend server.
+
+API docs are available at:
 
 ```text
 http://127.0.0.1:8000/docs
 ```
 
----
+## 3. Start the frontend
 
-## 4. Frontend setup
+After the backend is running, return to the release repository root and double-click:
 
-Open a second terminal in the release folder, then run:
-
-```bash
-cd frontend
-python -m venv venv
+```text
+start_frontend.bat
 ```
 
-### Windows PowerShell
+A second terminal window should open and launch the Streamlit dashboard in your browser. If the browser does not open automatically, check the terminal for the local Streamlit URL.
+
+Keep both terminal windows open while using the system.
+
+### Manual start commands
+
+Use these only if the `.bat` files are unavailable or you need to troubleshoot.
+
+Backend:
 
 ```powershell
+cd backend
 venv\Scripts\activate
-pip install -r requirements.txt
-python -m streamlit run app.py
-```
-
-### Windows Command Prompt
-
-```bat
-venv\Scripts\activate.bat
-pip install -r requirements.txt
-python -m streamlit run app.py
-```
-
-### macOS/Linux
-
-```bash
-source venv/bin/activate
-pip install -r requirements.txt
-python -m streamlit run app.py
-```
-
-The dashboard should open automatically in the browser. If it does not, copy the local URL shown in the terminal and paste it into the browser.
-
----
-
-## 5. Optional Windows launcher scripts
-
-Place these files in the release repository root.
-
-### `start_backend.bat`
-
-```bat
-@echo off
-cd /d "%~dp0backend"
-if not exist venv (
-    python -m venv venv
-)
-call venv\Scripts\activate.bat
-pip install -r requirements.txt
-if not exist .env (
-    copy .env.example .env
-)
 python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-pause
 ```
 
-### `start_frontend.bat`
+Frontend, in a separate terminal:
 
-```bat
-@echo off
-cd /d "%~dp0frontend"
-if not exist venv (
-    python -m venv venv
-)
-call venv\Scripts\activate.bat
-pip install -r requirements.txt
+```powershell
+cd frontend
+venv\Scripts\activate
 python -m streamlit run app.py
-pause
 ```
-
-Recommended startup order:
-
-1. Double-click `start_backend.bat`.
-2. Wait until the backend is running.
-3. Double-click `start_frontend.bat`.
 
 ---
 
-## 6. Environment configuration
+## 4. Environment configuration
 
 The backend uses `.env` for configuration. Start from `.env.example`.
 
@@ -205,11 +105,9 @@ DEFAULT_BAUD_RATE=9600
 READ_TIMEOUT_SECONDS=1.0
 ```
 
-For a local release package, SQLite is recommended because it does not require a separate database server.
-
 ---
 
-## 7. Pairing the HC-05 on Windows
+## 5. Pairing the HC-05 on Windows
 
 1. Turn on the Arduino and HC-05.
 2. Open Windows Bluetooth settings.
@@ -223,7 +121,7 @@ The dashboard can use Auto-detect, but knowing the COM port is useful for troubl
 
 ---
 
-## 8. Connecting from the dashboard
+## 6. Connecting from the dashboard
 
 1. Start the backend.
 2. Start the frontend.
@@ -238,7 +136,7 @@ Use `SIMULATOR` as the selected port if testing without physical hardware.
 
 ---
 
-## 9. Arduino output format
+## 7. Arduino output format
 
 The Arduino should print one CSV line per sample using this order:
 
@@ -261,7 +159,7 @@ Important notes:
 
 ---
 
-## 10. Verifying the system with simulator mode
+## 8. Verifying the system with simulator mode
 
 Simulator mode is the fastest way to confirm that the backend and frontend are installed correctly.
 
@@ -278,7 +176,7 @@ Simulator mode is the fastest way to confirm that the backend and frontend are i
 
 ---
 
-## 11. Recording a real session
+## 9. Recording a real session
 
 1. Pair the HC-05 with the computer.
 2. Start backend and frontend.
@@ -294,24 +192,13 @@ Simulator mode is the fastest way to confirm that the backend and frontend are i
 
 ---
 
-## 12. Generated data files
+## 10. Generated data files
 
 The backend stores local data in its `data/` folder, including:
 
 - SQLite database file
 - Session CSV files
 
-For a clean release repository, these files should normally be ignored by Git unless they are intentional demo files.
-
-Recommended `.gitignore` entries:
-
-```gitignore
-venv/
-__pycache__/
-*.pyc
-.env
-data/
-.streamlit/secrets.toml
 ```
 
 ---
