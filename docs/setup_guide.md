@@ -378,19 +378,3 @@ A session appears only after a recording has been started and stopped, or after 
 Go to **Load Session**, select a saved session, then use **Download selected CSV**. The CSV download is no longer located in **Sessions & Comparison**.
 
 ---
-
-## 14. Release checklist
-
-Before giving the system to users:
-
-- Backend starts successfully.
-- Frontend starts successfully.
-- Simulator mode produces live readings.
-- HC-05 can connect through Auto-detect or manual COM selection.
-- Live Dashboard updates with real or simulated readings.
-- Start/Stop recording creates a saved session.
-- Load Session displays a saved session correctly.
-- CSV download works from Load Session.
-- Sessions & Comparison can compare at least two saved sessions.
-- Manual Input can save a manual session.
-- Quizlet can generate questions from a valid source.

@@ -352,7 +352,3 @@ For a smooth demonstration:
 13. Show Quizlet using a saved session as the quiz source.
 
 ---
-
-## 16. Safety and accuracy reminder
-
-This system is intended to support laboratory observation and academic demonstration. Always confirm the physical sensor wiring, sensor calibration, pump mode, and pressure-sensor mapping before using the exported data for formal conclusions.
