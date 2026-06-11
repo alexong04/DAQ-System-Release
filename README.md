@@ -174,7 +174,7 @@ venv\Scripts\activate
 python -m streamlit run app.py
 ```
 
-For first-time installation, see `setup_guide.md`.
+For first-time installation, see `docs/setup_guide.md`.
 
 ---
 
