@@ -15,7 +15,7 @@ The dashboard helps users collect live readings, record sessions, load previous 
 
 ---
 
-## Latest release highlights
+## Release highlights
 
 - **Live Dashboard** for real-time flow, pressure, computed head, graphs, and readings table
 - **Load Session** tab for opening an existing saved session
