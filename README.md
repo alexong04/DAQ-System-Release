@@ -118,38 +118,25 @@ POST   /api/sessions/compare
 
 ## Quick start
 
+Use the provided Windows launcher scripts from the root of the release repository. Start the backend first, then start the frontend.
+
 ### 1. Start the backend
 
-```bash
-cd backend
-python -m venv venv
+From the release repository root, double-click:
+
+```text
+start_backend.bat
 ```
 
-Windows PowerShell:
-
-```powershell
-venv\Scripts\activate
-pip install -r requirements.txt
-copy .env.example .env
-python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-macOS/Linux:
-
-```bash
-source venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
-python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-Backend URL:
+A terminal window should open and start the FastAPI backend at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-API docs:
+Keep this backend terminal window open while using the system. Closing it stops the backend server.
+
+API docs are available at:
 
 ```text
 http://127.0.0.1:8000/docs
@@ -157,30 +144,37 @@ http://127.0.0.1:8000/docs
 
 ### 2. Start the frontend
 
-Open a new terminal:
+After the backend is running, return to the release repository root and double-click:
 
-```bash
-cd frontend
-python -m venv venv
+```text
+start_frontend.bat
 ```
 
-Windows PowerShell:
+A second terminal window should open and launch the Streamlit dashboard in your browser. If the browser does not open automatically, check the terminal for the local Streamlit URL.
+
+Keep both terminal windows open while using the system.
+
+### Manual start commands
+
+Use these only if the `.bat` files are unavailable or you need to troubleshoot.
+
+Backend:
 
 ```powershell
+cd backend
 venv\Scripts\activate
-pip install -r requirements.txt
+python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+Frontend, in a separate terminal:
+
+```powershell
+cd frontend
+venv\Scripts\activate
 python -m streamlit run app.py
 ```
 
-macOS/Linux:
-
-```bash
-source venv/bin/activate
-pip install -r requirements.txt
-python -m streamlit run app.py
-```
-
-The dashboard will open in the browser.
+For first-time installation, see `setup_guide.md`.
 
 ---
 
@@ -254,9 +248,13 @@ backend/app/calculations.py
 
 ## Notes for release
 
+Before publishing the release repository:
+
 - Do not commit virtual environments such as `venv/`.
 - Do not commit generated session databases or CSV files unless they are intentional demo files.
 - Keep `.env.example` committed, but do not commit private `.env` files.
+- Test `start_backend.bat` from the release repository root.
+- Test `start_frontend.bat` after the backend is running.
 - Test the system once with `SIMULATOR` mode.
 - Test the system once with the actual HC-05 connection.
 - Confirm that Load Session can load and export a recorded session.
@@ -267,7 +265,7 @@ backend/app/calculations.py
 
 ### Frontend says backend is offline
 
-Make sure the backend is running at:
+Make sure `start_backend.bat` is running and that its terminal window is still open. The backend should be available at:
 
 ```text
 http://127.0.0.1:8000
