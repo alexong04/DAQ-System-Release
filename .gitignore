@@ -1,0 +1,105 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.local
+.env.*.local
+
+# Keep the example env file
+!.env.example
+
+# =========================
+# Streamlit
+# =========================
+.streamlit/secrets.toml
+
+# =========================
+# Session data and local outputs
+# =========================
+sessions/
+logs/
+exports/
+recordings/
+*.csv
+*.db
+*.sqlite
+*.sqlite3
+
+# Keep sample data if intentionally committed
+!sample_data/
+!sample_data/.gitkeep
+!sample_data/*.csv
+
+# =========================
+# Node / frontend tooling
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vite/
+.next/
+out/
+
+# =========================
+# IDE / editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Arduino / embedded build files
+# =========================
+*.hex
+*.elf
+*.eep
+*.map
+
+# =========================
+# Archives / release files
+# =========================
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
+*.bak
