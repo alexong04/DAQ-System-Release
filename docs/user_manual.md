@@ -214,34 +214,11 @@ Typical use:
 5. Enter a manual saved session name.
 6. Save the manual readings as a session.
 
-Saved manual sessions appear together with normal recorded sessions. They can be loaded, compared, exported, and used in Quizlet.
+Saved manual sessions appear together with normal recorded sessions. They can be loaded, compared, and exported.
 
 ---
 
-## 11. Using Quizlet
-
-The **Quizlet** tab generates hidden-value table questions.
-
-Possible quiz sources include:
-
-- Current live readings
-- Built-in sample data
-- Saved sessions
-
-To create a quiz:
-
-1. Open **Quizlet**.
-2. Choose the quiz source.
-3. Select the number of questions.
-4. Click **Generate hidden values quiz**.
-5. Enter answers in the blank fields.
-6. Click **Submit answers**.
-
-If using current live readings, pause live reading first when a stable quiz source is needed.
-
----
-
-## 12. Understanding the graphs
+## 11. Understanding the graphs
 
 ### Pressure over timer
 
@@ -265,7 +242,7 @@ In real experiments, cleaner curves usually require stable readings, correct cal
 
 ---
 
-## 13. Expected data fields
+## 12. Expected data fields
 
 The Arduino/backend data should follow this order:
 
@@ -286,7 +263,7 @@ Field descriptions:
 
 ---
 
-## 14. Common problems and fixes
+## 13. Common problems and fixes
 
 ### The dashboard says the backend is offline
 
@@ -349,6 +326,5 @@ For a smooth demonstration:
 10. Download the CSV from Load Session.
 11. Record another session.
 12. Open Sessions & Comparison and compare both sessions.
-13. Show Quizlet using a saved session as the quiz source.
 
 ---

@@ -1593,14 +1593,14 @@ def main() -> None:
 
     st.divider()
 
-    tab_live, tab_load, tab_sessions, tab_summary, tab_manual, tab_quiz = st.tabs(
+    tab_live, tab_load, tab_sessions, tab_summary, tab_manual = st.tabs(
         [
             "Live Dashboard",
             "Load Session",
             "Sessions & Comparison",
             "Summary",
             "Manual Input",
-            "Quizlet",
+            # "Quizlet",
         ]
     )
 
@@ -1655,14 +1655,14 @@ def main() -> None:
             auto_refresh=controls["auto_refresh"],
         )
 
-    with tab_quiz:
-        render_hidden_value_quiz_tab(
-            current_df,
-            controls["mode"],
-            client,
-            backend_available,
-            controls["auto_refresh"],
-        )
+    # with tab_quiz:
+    #     render_hidden_value_quiz_tab(
+    #         current_df,
+    #         controls["mode"],
+    #         client,
+    #         backend_available,
+    #         controls["auto_refresh"],
+    #     )
 
 
 if __name__ == "__main__":

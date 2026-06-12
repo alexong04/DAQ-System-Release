@@ -24,7 +24,6 @@ The dashboard helps users collect live readings, record sessions, load previous 
 - **HC-05 / serial controls** with manual COM selection and Auto-detect
 - **Start / Stop session recording** from the sidebar
 - **Manual Input** tab for saving sessions using live flow and manually entered pressure values
-- **Quizlet** tab for hidden-table-value practice using current readings, sample data, or saved sessions
 - **Mock/simulator fallback** for testing the interface without hardware
 
 ---
@@ -88,8 +87,6 @@ Accepted fields:
 | **Sessions & Comparison** | Lists saved sessions and compares selected sessions using the head-vs-flow curve |
 | **Summary** | Shows current run summary and engineering notes |
 | **Manual Input** | Uses live flow with manually entered pressure readings and saves them as a session |
-| **Quizlet** | Generates hidden-value table questions from live data, sample data, or saved sessions |
-
 ---
 
 ## Backend API summary
