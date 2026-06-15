@@ -232,7 +232,7 @@ pressure term = average(
 Head is computed from the pressure term, velocity head, and elevation head:
 
 ```text
-head_ft = ((pressure term × 144) / 61.4) + velocity_head_ft + 3.70735
+head_ft = ((pressure term × 144) / 62.4) + velocity_head_ft + 3.70735
 ```
 
 The pressure-sensor mapping and velocity-head formula can be adjusted in:

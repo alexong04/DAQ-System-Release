@@ -155,7 +155,7 @@ def _formula_phrase(mode: str) -> str:
     mode_info = get_mode(mode)
     return mode_info.get(
         "formula",
-        "Head (ft) = ((ΔP × 144) / 61.4) + velocity head + 3.70735",
+        "Head (ft) = ((ΔP × 144) / 62.4) + velocity head + 3.70735",
     )
 
 
@@ -179,7 +179,7 @@ def _head_question(row: pd.Series, mode: str, question_no: int) -> dict[str, Any
             f"Pressure term = {delta_psi:.2f} psi\n"
             f"Flow term = {flow_l_hr:.2f} L/hr × 0.00000980965\n"
             f"Velocity head = {velocity_term:.4f} ft\n"
-            f"Head = (({delta_psi:.2f} × 144) / 61.4) + {velocity_term:.4f} + 3.70735\n"
+            f"Head = (({delta_psi:.2f} × 144) / 62.4) + {velocity_term:.4f} + 3.70735\n"
             f"Head = {answer:.2f} ft"
         ),
     }

@@ -6,7 +6,7 @@ PUMP_MODES = {
             "Two pumps are arranged one after another. The total system head estimate uses the combined pressure rise across Pump 1 and Pump 2."
         ),
         "head_strategy": "series",
-        "formula": "Head (ft) = (((P1 ΔP + P2 ΔP) × 144) / 61.4) + velocity head + 3.70735",
+        "formula": "Head (ft) = (((P1 ΔP + P2 ΔP) × 144) / 62.4) + velocity head + 3.70735",
         "badge": "S",
     },
     "parallel": {
@@ -16,7 +16,7 @@ PUMP_MODES = {
             "Two pumps operate on parallel paths. The estimate uses the average pressure rise produced by Pump 1 and Pump 2."
         ),
         "head_strategy": "parallel",
-        "formula": "Head (ft) = (((avg(P1 ΔP, P2 ΔP)) × 144) / 61.4) + velocity head + 3.70735",
+        "formula": "Head (ft) = (((avg(P1 ΔP, P2 ΔP)) × 144) / 62.4) + velocity head + 3.70735",
         "badge": "P",
     },
 }

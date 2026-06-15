@@ -5,9 +5,9 @@ from typing import Dict, Iterable, Optional, Tuple
 LHR_TO_M3S = 1.0 / 3_600_000.0
 
 # Head formula constants.
-# psi * 144 converts lbf/in^2 to lbf/ft^2; 61.4 is water specific weight in lbf/ft^3.
+# psi * 144 converts lbf/in^2 to lbf/ft^2; 62.4 is water specific weight in lbf/ft^3.
 PSI_TO_LBF_PER_FT2 = 144.0
-WATER_SPECIFIC_WEIGHT_LB_FT3 = 61.4
+WATER_SPECIFIC_WEIGHT_LB_FT3 = 62.4
 LHR_TO_FT3S = 0.00000980965
 GRAVITY_2G_FT_S2 = 64.4
 ELEVATION_HEAD_FT = 3.70735

@@ -2,7 +2,7 @@
 
 This manual explains how to use the Pump Data Acquisition System dashboard during laboratory testing.
 
-The system records pump readings from an Arduino and displays live graphs, computed head, saved sessions, session comparison curves, manual-input sessions, and hidden-value quizzes.
+The system records pump readings from an Arduino and displays live graphs, computed head, saved sessions, session comparison curves, and manual-input sessions.
 
 ---
 
@@ -51,7 +51,6 @@ The sidebar contains the main controls used before and during the experiment:
 | Sessions & Comparison | View saved sessions and compare selected sessions |
 | Summary | View current run summary and formula notes |
 | Manual Input | Add manual pressure readings using live flow values |
-| Quizlet | Generate hidden-value table quizzes |
 
 ---
 
@@ -138,7 +137,7 @@ Use session recording when the experiment data should be saved.
 6. Monitor values in **Live Dashboard**.
 7. Click **Stop recording** when finished.
 
-After stopping, the session becomes available in **Load Session**, **Sessions & Comparison**, and the **Quizlet** saved-session source.
+After stopping, the session becomes available in **Load Session** and **Sessions & Comparison**.
 
 ---
 

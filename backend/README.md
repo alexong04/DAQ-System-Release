@@ -189,7 +189,7 @@ Parallel pressure term:
 ΔP_psi = average(p1_discharge - p1_suction, p2_discharge - p2_suction)
 
 Head formula:
-head_ft = ((ΔP_psi * 144) / 61.4) + velocity_head_ft + 3.70735
+head_ft = ((ΔP_psi * 144) / 62.4) + velocity_head_ft + 3.70735
 
 Flow conversion:
 Q_ft3_s = flow_l_hr * 0.00000980965

@@ -1191,7 +1191,7 @@ def render_manual_pressure_tab(
     save_name = st.text_input(
         "Manual saved session name",
         key="manual_pressure_session_name",
-        help="This name will appear in Saved sessions, session comparison, export CSV, and the quiz source selector.",
+        help="This name will appear in Saved sessions, session comparison, and export CSV.",
     )
 
     save_disabled = manual_df.empty or not backend_available or not str(save_name).strip()
@@ -1219,7 +1219,7 @@ def render_manual_pressure_tab(
             st.session_state.manual_pressure_last_saved_session = created
             st.success(
                 f"Saved manual samples as session #{created.get('id')} — {created.get('name', save_name)}. "
-                "It is now available under Saved sessions and the quiz source selector."
+                "It is now available under Saved sessions."
             )
         except BackendError as exc:
             st.error(f"Failed to save manual samples: {exc}")
@@ -1635,7 +1635,7 @@ def main() -> None:
                 """
                 For series mode, it uses (P1 discharge − P1 suction) + (P2 discharge − P2 suction).
                 For parallel mode, it uses the average of Pump 1 pressure rise and Pump 2 pressure rise.
-                Both modes use: Head (ft) = ((pressure term × 144) / 61.4) + velocity head + 3.70735.
+                Both modes use: Head (ft) = ((pressure term × 144) / 62.4) + velocity head + 3.70735.
                 """
             )
 
